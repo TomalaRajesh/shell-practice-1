@@ -10,7 +10,7 @@ else
     echo "You are running with root access"
 fi
 
-# Validate function takes input as ext status, what command they tried to install
+# Validate function takes input as exit status, what command they tried to install
  VALIDATE(){
     if [ $1 -eq 0 ]
     then 
@@ -29,7 +29,6 @@ then
     VALIDATE $? "MYSQL"
 else 
     echo "MYSQL is already installed...nothing to do"
-    exit 1
 fi
 
 dnf list installed python3
@@ -40,7 +39,6 @@ then
     VALIDATE $? "python3"
 else 
     echo "python3 is already installed...nothing to do"
-    exit 1
 fi
 
 dnf list installed nginx
@@ -51,5 +49,4 @@ then
     VALIDATE $? "nginx"
 else 
     echo "nginx is already installed...nothing to do"
-    exit 1
 fi
