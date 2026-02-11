@@ -32,8 +32,7 @@ fi
         fi
 }
 
-#for packages in ${PACKAGES[@]}
-for packages in "$@"
+for packages in ${PACKAGES[@]}
 do
     dnf list installed $packages &>>$LOG_FILE
     if [ $? -ne 0 ]
